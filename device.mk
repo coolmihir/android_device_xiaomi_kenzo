@@ -56,3 +56,19 @@ PRODUCT_COPY_FILES += \
 
 # Inherit from msm8956-common
 $(call inherit-product, device/xiaomi/msm8956-common/msm8956.mk)
+
+# OTA-Config
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.ota.romname=AIM-ROM \
+        ro.ota.version=$(shell date +"%Y%m%d") \
+        ro.ota.manifest=https://raw.githubusercontent.com/AIMROM/OFFICIAL_DEVICES/N/kenzo.xml
+        
+# FOR BUILDING OFFICIAL PACKAGE
+export AIM_BUILDTYPE=OFFICIAL
+
+# FOR EXPORTING WITH MAGISK
+export WITH_MAGISK=true
+
+# FOR ADDING MAINTAINER NAME TO ABOUT DEVICE
+PRODUCT_PROPERTY_OVERRIDES += /
+        ro.aim.maintainer=coolmihir
