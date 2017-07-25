@@ -72,3 +72,5 @@ export WITH_MAGISK=true
 # FOR ADDING MAINTAINER NAME TO ABOUT DEVICE
 PRODUCT_PROPERTY_OVERRIDES += /
         ro.aim.maintainer=coolmihir
+
+export KBUILD_BUILD_USER=coolmihir
